@@ -43,7 +43,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:text="how was hour sleep" />
+                android:text="@{sleepTrackerViewModel.nightsString}" />
         </ScrollView>
 
         <!-- With data binding and LiveData, we can track the buttons' visibility states

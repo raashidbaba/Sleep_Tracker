@@ -21,10 +21,10 @@ class SleepTrackerViewModel(
         viewModelJob.cancel()
     }
 
-    private var uiscope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    private val uiscope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private var tonight = MutableLiveData<SleepNight?>()
-    private var nights = database.getAllNights()
-    val nightsString = Transformations.map(nights){
+    private val nights = database.getAllNights()
+    val nightsString = androidx.lifecycle.Transformations.map(nights){
         formatNights(it,application.resources)
 
     }

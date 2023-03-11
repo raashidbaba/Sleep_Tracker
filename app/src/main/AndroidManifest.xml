@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SleepTracker"
-        tools:targetApi="31">
-        <activity
+        tools:targetApi="31"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+
+    <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

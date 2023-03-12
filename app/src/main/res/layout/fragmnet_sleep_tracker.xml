@@ -30,6 +30,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/purple_200"
             app:layout_constraintTop_toBottomOf="@+id/stop_button">
 
             <!-- In the TextView, we can access the nightsString LiveData,

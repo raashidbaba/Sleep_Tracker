@@ -10,7 +10,7 @@
 
 <variable
     name="sleepTrackerViewModel"
-    type="com.example.sleeptracker.SleepTracker.SleepTrackerViewModel" />
+    type="com.example.sleeptracker.sleepTracker.SleepTrackerViewModel" />
     </data>
 
     <!-- Start of the visible fragment layout using ConstraintLayout -->

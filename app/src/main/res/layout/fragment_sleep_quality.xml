@@ -7,7 +7,9 @@
      the whole ViewModel, so that we can access the LiveData,
      click handlers, and state variables. -->
     <data>
-
+<variable
+    name="sleepQualityViewModel"
+    type="com.example.sleeptracker.sleepQuality.SleepQualityViewModel" />
     </data>
 
     <!-- Start of the visible fragment layout using ConstraintLayout -->
@@ -47,21 +49,26 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/reaction_one" />
+                android:src="@drawable/reaction_one"
+                android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(0)}"/>
 
             <ImageView
                 android:id="@+id/quality_one_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/reaction_two" />
+                android:src="@drawable/reaction_two"
+                android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(1)}"/>
+            />
 
             <ImageView
                 android:id="@+id/quality_two_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:src="@drawable/reaction_three" />
+                android:src="@drawable/reaction_three"
+                android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(2)}"/>
+            />
         </LinearLayout>
 
         <LinearLayout
@@ -81,20 +88,25 @@
               android:layout_height="50dp"
               android:layout_weight="1"
               android:src="@drawable/reaction_four"
-               />
+              android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(3)}"/>
+            />
 
           <ImageView
               android:id="@+id/quality_four_image"
               android:layout_width="50dp"
               android:layout_height="50dp"
               android:layout_weight="1"
-              android:src="@drawable/reaction_five"/>
+              android:src="@drawable/reaction_five"
+              android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(4)}"/>
+            />
           <ImageView
               android:id="@+id/quality_five_image"
               android:layout_width="50dp"
               android:layout_height="50dp"
               android:layout_weight="1"
-              android:src="@drawable/reaction_six"/>
+              android:src="@drawable/reaction_six"
+              android:onClick="@{()->sleepQualityViewModel.onSetSleepQuality(5)}"/>
+            />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,8 +1,6 @@
-package com.example.sleeptracker.SleepTracker
+package com.example.sleeptracker.sleepTracker
 
 import android.app.Application
-import android.arch.lifecycle.Transformations
-import android.provider.SyncStateContract.Helpers.insert
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

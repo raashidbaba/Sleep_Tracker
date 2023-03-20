@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SleepTracker"
         tools:targetApi="31"
-        android:appComponentFactory="android.support.v4.app.CoreComponentFactory">
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        tools:replace="android:appComponentFactory">
 
     <activity
             android:name=".MainActivity"

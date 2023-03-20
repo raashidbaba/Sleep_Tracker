@@ -3,9 +3,9 @@ package com.example.sleeptracker
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Build
-import android.support.v4.text.HtmlCompat
 import android.text.Html
 import android.text.Spanned
+import androidx.core.text.HtmlCompat
 import com.example.sleeptracker.Database.SleepNight
 import java.text.SimpleDateFormat
 

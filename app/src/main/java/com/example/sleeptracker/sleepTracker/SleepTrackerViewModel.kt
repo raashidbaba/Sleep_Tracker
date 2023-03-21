@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.example.sleeptracker.Database.SleepDatabaseDao
 import com.example.sleeptracker.Database.SleepNight
 import com.example.sleeptracker.formatNights
@@ -27,6 +28,28 @@ class SleepTrackerViewModel(
         formatNights(it,application.resources)
 
     }
+    val startButtonVisible = Transformations.map(tonight){
+        null==it
+    }
+    val stopButtonVisible = Transformations.map(tonight){
+        null!=it
+    }
+    val clearButtonVisible = Transformations.map(nights){
+        it?.isNullOrEmpty()
+
+    }
+
+    private var _ShowSnackBarEvent = MutableLiveData<Boolean>()
+    val showSnackBarEvent : LiveData<Boolean>
+    get() = _ShowSnackBarEvent
+
+    fun doneShowingSnackBar(){
+        _ShowSnackBarEvent.value = false
+    }
+
+
+
+
 private val _navigateToSleepQuality = MutableLiveData<SleepNight>()
     val navigationToSleepQuality : LiveData<SleepNight>
     get() = _navigateToSleepQuality
@@ -81,6 +104,7 @@ private val _navigateToSleepQuality = MutableLiveData<SleepNight>()
         uiscope.launch {
             clear()
             tonight.value = null
+            _ShowSnackBarEvent.value = true
         }
     }
     suspend fun clear(){

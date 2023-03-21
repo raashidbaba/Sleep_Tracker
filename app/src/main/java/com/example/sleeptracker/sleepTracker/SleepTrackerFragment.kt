@@ -12,6 +12,7 @@ import androidx.navigation.Navigation
 import com.example.sleeptracker.Database.SleepDatabase
 import com.example.sleeptracker.R
 import com.example.sleeptracker.databinding.FragmnetSleepTrackerBinding
+import com.google.android.material.snackbar.Snackbar
 
 class SleepTrackerFragment : Fragment() {
     override fun onCreateView(
@@ -47,6 +48,20 @@ class SleepTrackerFragment : Fragment() {
                     sleepTrackerViewModel.doneNavigating()
                 }
             })
+        sleepTrackerViewModel.showSnackBarEvent.observe(this, Observer {
+            if (it==true){
+                Snackbar.make(requireActivity().findViewById(android.R.id.content),
+                getString(R.string.cleared_message),
+                Snackbar.LENGTH_SHORT).show()
+                sleepTrackerViewModel.doneShowingSnackBar()
+            }
+        })
+
+
+
+
+
+
         return binding.root
     }
 }
